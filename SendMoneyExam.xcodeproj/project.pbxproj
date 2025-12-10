@@ -48,6 +48,7 @@
 		97C9F2F62EE9B2DA0037B1F4 /* SendMoneyExamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMoneyExamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9F2FA2EE9B2DA0037B1F4 /* SendMoneyExamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamUITests.swift; sourceTree = "<group>"; };
 		97C9F2FC2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		97C9F3092EE9B3520037B1F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		97C9F2CE2EE9B2D60037B1F4 = {
 			isa = PBXGroup;
 			children = (
+				97C9F3092EE9B3520037B1F4 /* README.md */,
 				97C9F2D92EE9B2D60037B1F4 /* SendMoneyExam */,
 				97C9F2EF2EE9B2DA0037B1F4 /* SendMoneyExamTests */,
 				97C9F2F92EE9B2DA0037B1F4 /* SendMoneyExamUITests */,
