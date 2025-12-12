@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */; };
+		978D66E72EEC16C3004CC45B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D66E62EEC16C3004CC45B /* AuthenticationService.swift */; };
 		97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2DA2EE9B2D60037B1F4 /* SendMoneyExamApp.swift */; };
 		97C9F2DD2EE9B2D60037B1F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2DC2EE9B2D60037B1F4 /* ContentView.swift */; };
 		97C9F2DF2EE9B2DA0037B1F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C9F2DE2EE9B2DA0037B1F4 /* Assets.xcassets */; };
@@ -18,6 +20,7 @@
 		97C9F2FD2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2FC2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift */; };
 		97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE02EEAD4F00056BB1F /* LoginView.swift */; };
 		97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */; };
+		97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE42EEAF3140056BB1F /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		978D66E62EEC16C3004CC45B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		97C9F2D72EE9B2D60037B1F4 /* SendMoneyExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendMoneyExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9F2DA2EE9B2D60037B1F4 /* SendMoneyExamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamApp.swift; sourceTree = "<group>"; };
 		97C9F2DC2EE9B2D60037B1F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		97C9F3092EE9B3520037B1F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		97EB3DE02EEAD4F00056BB1F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		97EB3DE42EEAF3140056BB1F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		978D66E52EEC16AB004CC45B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				978D66E62EEC16C3004CC45B /* AuthenticationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		97C9F2CE2EE9B2D60037B1F4 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				97EB3DDF2EEAD4380056BB1F /* Persistence */,
+				978D66E52EEC16AB004CC45B /* Service */,
 				97C9F30B2EE9B58C0037B1F4 /* ViewModel */,
 				97C9F30A2EE9B5810037B1F4 /* View */,
 				97C9F2DA2EE9B2D60037B1F4 /* SendMoneyExamApp.swift */,
@@ -144,6 +159,7 @@
 			children = (
 				97C9F2DC2EE9B2D60037B1F4 /* ContentView.swift */,
 				97EB3DE02EEAD4F00056BB1F /* LoginView.swift */,
+				97EB3DE42EEAF3140056BB1F /* DashboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */,
+				9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,9 +315,12 @@
 				97C9F2E42EE9B2DA0037B1F4 /* Persistence.swift in Sources */,
 				97C9F2DD2EE9B2D60037B1F4 /* ContentView.swift in Sources */,
 				97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */,
+				9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */,
+				97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */,
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
 				97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */,
 				97C9F2E72EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld in Sources */,
+				978D66E72EEC16C3004CC45B /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
