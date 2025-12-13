@@ -10,33 +10,35 @@ import SwiftUI
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
-        NavigationStack() {
-            VStack(spacing: 8) {
-                Group {
-                    TextField("Username", text: $viewModel.username)
-                    TextField("Password", text: $viewModel.password)
-                }
-                .disabled(viewModel.isLoading)
-                .padding(.horizontal)
-                .textFieldStyle(.roundedBorder)
-                
-                Text(viewModel.errorMessage)
-                    .font(.footnote)
-                    .foregroundColor(.red)
-                    .opacity(viewModel.showErrorMessage ? 1 : 0)
-                
-                if viewModel.isLoading {
-                    ProgressView()
-                } else {
-                    Button("Login") {
-                        Task { await viewModel.login() }
+        VStack(spacing: 8) {
+            Group {
+                TextField("Username", text: $viewModel.username)
+                TextField("Password", text: $viewModel.password)
+            }
+            .disabled(viewModel.isLoading)
+            .padding(.horizontal)
+            .textFieldStyle(.roundedBorder)
+            
+            Text(viewModel.errorMessage)
+                .font(.footnote)
+                .foregroundColor(.red)
+                .opacity(viewModel.showErrorMessage ? 1 : 0)
+            
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                Button("Login") {
+                    Task {
+                        await viewModel.login()
+                        
+                        if viewModel.isAuthenticated {
+                            path.append(Route.dashboard)
+                        }
                     }
                 }
-            }
-            .navigationDestination(isPresented: $viewModel.isAuthenticated) {
-                DashboardView()
-                    .navigationBarBackButtonHidden()
             }
         }
     }
@@ -44,6 +46,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(path: .constant(.init()))
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BDE2EEDC1EA00FED302 /* Route.swift */; };
 		9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */; };
 		978D66E72EEC16C3004CC45B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D66E62EEC16C3004CC45B /* AuthenticationService.swift */; };
 		97A632632EED852D004A3D76 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A632622EED852D004A3D76 /* WalletViewModel.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97590BDE2EEDC1EA00FED302 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		978D66E62EEC16C3004CC45B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		97A632622EED852D004A3D76 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97590BDD2EEDC1DC00FED302 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				97590BDE2EEDC1EA00FED302 /* Route.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		978D66E52EEC16AB004CC45B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		97C9F2D92EE9B2D60037B1F4 /* SendMoneyExam */ = {
 			isa = PBXGroup;
 			children = (
+				97590BDD2EEDC1DC00FED302 /* Navigation */,
 				97EB3DDF2EEAD4380056BB1F /* Persistence */,
 				978D66E52EEC16AB004CC45B /* Service */,
 				97C9F30B2EE9B58C0037B1F4 /* ViewModel */,
@@ -322,6 +333,7 @@
 				97C9F2DD2EE9B2D60037B1F4 /* ContentView.swift in Sources */,
 				97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */,
 				9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */,
+				97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */,
 				97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */,
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
 				97A632652EED900C004A3D76 /* SendMoneyView.swift in Sources */,

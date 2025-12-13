@@ -11,10 +11,20 @@ import SwiftUI
 struct SendMoneyExamApp: App {
     let persistenceController = PersistenceController.shared
 
+    @State private var path = NavigationPath()
+    
     var body: some Scene {
         WindowGroup {
 //            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            LoginView()
+            
+            NavigationStack(path: $path) {
+                LoginView(path: $path)
+                    .navigationDestination(for: Route.self) { route in
+                        route.view($path)
+                            .navigationBarBackButtonHidden(route.hideBackButton)
+                    }
+            }
+            
         }
     }
 }

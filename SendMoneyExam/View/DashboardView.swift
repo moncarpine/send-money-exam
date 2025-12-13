@@ -12,6 +12,8 @@ struct DashboardView: View {
     
     @StateObject private var viewModel = WalletViewModel()
     
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack {
             HStack {
@@ -34,7 +36,7 @@ struct DashboardView: View {
             
             HStack {
                 Button {
-                    
+                    path.append(Route.sendMoney)
                 } label: {
                     Label("Send Money", systemImage: "paperplane.fill")
                         .labelStyle(DashboardLabelStyle())
@@ -42,7 +44,7 @@ struct DashboardView: View {
                 .buttonStyle(.bordered)
                 
                 Button {
-                    
+                    path.append(Route.transactions)
                 } label: {
                     Label("Transactions", systemImage: "list.bullet.rectangle.portrait.fill")
                         .labelStyle(DashboardLabelStyle())
@@ -75,6 +77,6 @@ private struct DashboardLabelStyle: LabelStyle {
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        DashboardView(path: .constant(.init()))
     }
 }
