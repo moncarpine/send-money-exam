@@ -10,18 +10,18 @@ import SwiftUI
 struct DashboardView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var showBalance = true
+    @StateObject private var viewModel = WalletViewModel()
     
     var body: some View {
         VStack {
             HStack {
-                Text(showBalance ? "$ 1,000" : "$ *****")
+                Text(viewModel.displayBalance())
                     .font(.largeTitle)
                 Spacer()
                 Button {
-                    toggleBalanceVisibility()
+                    viewModel.toggleShowBalance()
                 } label: {
-                    if showBalance {
+                    if viewModel.showBalance {
                         Image(systemName: "eye")
                     } else {
                         Image(systemName: "eye.slash")
@@ -59,10 +59,6 @@ struct DashboardView: View {
                 }
             }
         }
-    }
-    
-    func toggleBalanceVisibility() {
-        showBalance.toggle()
     }
 }
 
