@@ -21,11 +21,10 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .textFieldStyle(.roundedBorder)
                 
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .font(.footnote)
-                        .foregroundColor(.red)
-                }
+                Text(viewModel.errorMessage)
+                    .font(.footnote)
+                    .foregroundColor(.red)
+                    .opacity(viewModel.showErrorMessage ? 1 : 0)
                 
                 if viewModel.isLoading {
                     ProgressView()
