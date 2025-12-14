@@ -7,22 +7,12 @@
 
 import Foundation
 
-//protocol AmountFormatter {
-//    func formattedAmount(_ amount: Int) -> String
-//    func maskedAmount() -> String
-//}
-
 class AmountFormatter {
     func formattedAmount(_ amount: Int) -> String {
         return "\(Constant.currencySymbol)\(amount.formatted())"
-//        return amount.formatted(
-//            .currency(code: "PHP")
-//            .precision(.fractionLength(0))
-//        )
     }
     
     func maskedAmount() -> String {
-//        let symbol = Locale(identifier: "USD").currencySymbol ?? ""
         return "\(Constant.currencySymbol)\(Constant.maskedAmount)"
     }
 }
