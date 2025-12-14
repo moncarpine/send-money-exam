@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum DialogType {
+    case success
+    case info
+    case alert
+    case error
+}
+
 struct Constant {
     static let currencySymbol = "₱"
     static let maskedAmount = "********"
