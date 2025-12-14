@@ -10,7 +10,7 @@ import SwiftUI
 enum Route {
     case login
     case dashboard
-    case sendMoney
+    case sendMoney(wallet: Wallet)
     case transactions
     
     var hideBackButton: Bool {
@@ -29,10 +29,21 @@ enum Route {
             LoginView(path: path)
         case .dashboard:
             DashboardView(path: path)
-        case .sendMoney:
-            SendMoneyView()
+        case .sendMoney(let wallet):
+            SendMoneyView(viewModel: SendMoneyViewModel(wallet: wallet))
         case .transactions:
             TransactionListView(viewModel: TransactionViewModel())
+        }
+    }
+}
+
+extension Route: Hashable {
+    func hash(into hasher: inout Hasher) {
+        switch self {
+        case let .sendMoney(wallet):
+            hasher.combine(wallet.id)
+        default:
+            break
         }
     }
 }

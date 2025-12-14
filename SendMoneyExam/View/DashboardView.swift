@@ -10,10 +10,10 @@ import SwiftUI
 struct DashboardView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @StateObject private var viewModel = WalletViewModel()
-    
     @Binding var path: NavigationPath
     
+    @StateObject var viewModel = WalletViewModel(wallet: .init(balance: 1000))
+
     var body: some View {
         VStack {
             HStack {
@@ -36,7 +36,7 @@ struct DashboardView: View {
             
             HStack {
                 Button {
-                    path.append(Route.sendMoney)
+                    path.append(Route.sendMoney(wallet: viewModel.wallet))
                 } label: {
                     Label("Send Money", systemImage: "paperplane.fill")
                         .labelStyle(DashboardLabelStyle())
@@ -77,6 +77,6 @@ private struct DashboardLabelStyle: LabelStyle {
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView(path: .constant(.init()))
+        DashboardView(path: .constant(.init()), viewModel: .init(wallet: .init(balance: 1000)))
     }
 }

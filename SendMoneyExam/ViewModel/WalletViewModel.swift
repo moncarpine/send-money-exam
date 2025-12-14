@@ -8,20 +8,27 @@
 import Foundation
 
 class WalletViewModel: ObservableObject {
-    @Published var balance = 1000
+    @Published var wallet: Wallet
     @Published var showBalance = true
     
     private let formatter = AmountFormatter()
+    
+    init(wallet: Wallet) {
+        self.wallet = wallet
+    }
+    
+    // TODO: create protocol for currencyFormattedBalance()
+    // for displaying current balance formatted with currency symbol.
+    func currencyFormattedBalance() -> String {
+        return formatter.formattedAmount(wallet.balance)
+    }
 
+    // for displaying current balance either currency formatted or masked.
     func displayBalance() -> String {
-        return showBalance ? formatter.formattedAmount(balance) : formatter.maskedAmount()
+        return showBalance ? currencyFormattedBalance() : formatter.maskedAmount()
     }
     
     func toggleShowBalance() {
         showBalance.toggle()
     }
-}
-
-class WalletFormatter {
-    
 }
