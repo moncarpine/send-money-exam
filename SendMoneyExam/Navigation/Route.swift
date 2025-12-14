@@ -32,7 +32,7 @@ enum Route {
         case .sendMoney:
             SendMoneyView()
         case .transactions:
-            EmptyView()
+            TransactionListView(viewModel: TransactionViewModel())
         }
     }
 }

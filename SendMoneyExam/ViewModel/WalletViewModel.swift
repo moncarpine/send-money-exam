@@ -8,25 +8,25 @@
 import Foundation
 
 class WalletViewModel: ObservableObject {
-    let currencySymbol = "₱"
-    
     @Published var balance = 1000
     @Published var showBalance = true
     
-    private var hiddenBalance: String {
-        return String(balance).map({ _ in "*"}).joined()
-    }
+    private let formatter = AmountFormatter()
+    
+//    private var hiddenBalance: String {
+//        return formatter.maskedAmount()
+//    }
+//
+//    func formattedBalance() -> String {
+//        return showBalance ? "\(balance.formatted(.number))" : hiddenBalance
+//    }
     
     func displayBalance() -> String {
-        return "\(currencySymbol) \(formattedBalance())"
+        return showBalance ? formatter.formattedAmount(balance) : formatter.maskedAmount()
     }
     
     func toggleShowBalance() {
         showBalance.toggle()
-    }
-    
-    func formattedBalance() -> String {
-        return showBalance ? "\(balance.formatted(.number))" : hiddenBalance
     }
 }
 

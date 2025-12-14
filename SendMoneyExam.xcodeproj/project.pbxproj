@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BDE2EEDC1EA00FED302 /* Route.swift */; };
+		97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BE02EEDD19800FED302 /* TransactionListView.swift */; };
+		97733DEC2EEEC2CF00611BD1 /* FormatterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733DEB2EEEC2CF00611BD1 /* FormatterHelper.swift */; };
+		97733DEE2EEEC40A00611BD1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733DED2EEEC40A00611BD1 /* Constant.swift */; };
+		97733DF02EEEC80300611BD1 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97733DEF2EEEC80300611BD1 /* TransactionViewModel.swift */; };
 		9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */; };
 		978D66E72EEC16C3004CC45B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D66E62EEC16C3004CC45B /* AuthenticationService.swift */; };
 		97A632632EED852D004A3D76 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A632622EED852D004A3D76 /* WalletViewModel.swift */; };
@@ -45,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		97590BDE2EEDC1EA00FED302 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		97590BE02EEDD19800FED302 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		97733DEB2EEEC2CF00611BD1 /* FormatterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterHelper.swift; sourceTree = "<group>"; };
+		97733DED2EEEC40A00611BD1 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		97733DEF2EEEC80300611BD1 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		978D66E62EEC16C3004CC45B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		97A632622EED852D004A3D76 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +108,15 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		97733DE72EEEC25600611BD1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				97733DEB2EEEC2CF00611BD1 /* FormatterHelper.swift */,
+				97733DED2EEEC40A00611BD1 /* Constant.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		978D66E52EEC16AB004CC45B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 		97C9F2D92EE9B2D60037B1F4 /* SendMoneyExam */ = {
 			isa = PBXGroup;
 			children = (
+				97733DE72EEEC25600611BD1 /* Helper */,
 				97590BDD2EEDC1DC00FED302 /* Navigation */,
 				97EB3DDF2EEAD4380056BB1F /* Persistence */,
 				978D66E52EEC16AB004CC45B /* Service */,
@@ -176,6 +194,7 @@
 				97EB3DE02EEAD4F00056BB1F /* LoginView.swift */,
 				97EB3DE42EEAF3140056BB1F /* DashboardView.swift */,
 				97A632642EED900C004A3D76 /* SendMoneyView.swift */,
+				97590BE02EEDD19800FED302 /* TransactionListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +205,7 @@
 				97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */,
 				9775D4CA2EEC7728009B50C6 /* DashboardViewModel.swift */,
 				97A632622EED852D004A3D76 /* WalletViewModel.swift */,
+				97733DEF2EEEC80300611BD1 /* TransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,11 +351,15 @@
 			files = (
 				97C9F2E42EE9B2DA0037B1F4 /* Persistence.swift in Sources */,
 				97C9F2DD2EE9B2D60037B1F4 /* ContentView.swift in Sources */,
+				97733DEE2EEEC40A00611BD1 /* Constant.swift in Sources */,
 				97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */,
 				9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */,
+				97733DEC2EEEC2CF00611BD1 /* FormatterHelper.swift in Sources */,
 				97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */,
+				97733DF02EEEC80300611BD1 /* TransactionViewModel.swift in Sources */,
 				97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */,
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
+				97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */,
 				97A632652EED900C004A3D76 /* SendMoneyView.swift in Sources */,
 				97A632632EED852D004A3D76 /* WalletViewModel.swift in Sources */,
 				97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */,

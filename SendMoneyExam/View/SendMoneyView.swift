@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SendMoneyView: View {
-    @State private var amount = "0"
+    @State private var amount = ""
     @State private var showAlert = false
     
     var body: some View {
