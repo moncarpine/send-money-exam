@@ -25,14 +25,14 @@ class TransactionFormatter: AmountFormatter {
     }
     
     func shortDate() -> String {
-        return transaction.date.formatted(date: .abbreviated, time: .omitted)
+        return transaction.timestamp?.formatted(date: .abbreviated, time: .omitted) ?? ""
     }
     
     func shortTime() -> String {
-        return transaction.date.formatted(date: .omitted, time: .shortened)
+        return transaction.timestamp?.formatted(date: .omitted, time: .shortened) ?? ""
     }
     
     func formattedAmount() -> String {
-        return formattedAmount(transaction.amount)
+        return formattedAmount(Int(transaction.amount))
     }
 }

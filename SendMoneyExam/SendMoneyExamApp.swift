@@ -15,16 +15,14 @@ struct SendMoneyExamApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            
             NavigationStack(path: $path) {
                 LoginView(path: $path)
                     .navigationDestination(for: Route.self) { route in
                         route.view($path)
                             .navigationBarBackButtonHidden(route.hideBackButton)
                     }
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
-            
         }
     }
 }

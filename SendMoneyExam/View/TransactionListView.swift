@@ -13,45 +13,43 @@ struct TransactionListView: View {
 //    let transactions = Array(repeating: Transaction(date: .now, amount: 1000),
 //                             count: 5)
     
+    @FetchRequest(
+        entity: Transaction.entity(),
+        sortDescriptors: [NSSortDescriptor(key: "timestamp",
+                                           ascending: false)]
+    )
+    private var transactions: FetchedResults<Transaction>
+    
     var body: some View {
-        List(viewModel.transactions) {
+        List(transactions) {
             TransactionItemView(transaction: $0)
         }
+        .emptyPlaceholder(transactions, placeholder:
+            VStack {
+                Image(systemName: "info.circle.fill")
+                    .foregroundColor(.blue)
+                    .font(.system(size: 64))
+                Text("No Transactions")
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+            }
+        )
     }
 }
 
-struct TransactionItemView: View {
-    private let formatter: TransactionFormatter
-    
-    init(transaction: Transaction) {
-        self.formatter = TransactionFormatter(transaction)
-    }
-    
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(formatter.shortDate())
-                Text(formatter.shortTime())
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
-            
-            Spacer()
-            Text(formatter.formattedAmount())
-                .font(.largeTitle)
+extension View {
+    @ViewBuilder
+    func emptyPlaceholder<Items: Collection, PlaceholderView: View>(_ items: Items, placeholder: PlaceholderView) -> some View {
+        if items.isEmpty {
+            placeholder
+        } else {
+            self
         }
-        .navigationTitle("Transactions")
     }
 }
 
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
         TransactionListView(viewModel: TransactionViewModel())
-    }
-}
-
-struct TransactionItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionItemView(transaction: Transaction(date: .now, amount: 1000))
     }
 }

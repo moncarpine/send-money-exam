@@ -33,6 +33,7 @@ enum Route {
             SendMoneyView(viewModel: SendMoneyViewModel(wallet: wallet))
         case .transactions:
             TransactionListView(viewModel: TransactionViewModel())
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }
 }
