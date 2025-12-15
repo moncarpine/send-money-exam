@@ -7,7 +7,10 @@
 
 import Foundation
 
+// TODO: refactor implementation of TransactionDatabase in this viewmodel
 class SendMoneyViewModel: ObservableObject {
+    private let database: TransactionDatabase
+    
     @Published var wallet: Wallet
     
     @Published var showDialogType: DialogType? = nil
@@ -18,11 +21,11 @@ class SendMoneyViewModel: ObservableObject {
     
     init(wallet: Wallet) {
         self.wallet = wallet
+        self.database = TransactionDatabase(context: PersistenceController.shared.container.viewContext)
     }
     
     func sendMoney(amount: Int) {
         defer {
-            print("show dialog")
             showDialog = (showDialogType != nil)
         }
         
@@ -32,20 +35,22 @@ class SendMoneyViewModel: ObservableObject {
             return
         }
         
+        guard !isAmountLessThanBalance(amount: amount) else {
+            showDialogType = .alert
+            dialogMessage = "Amount should be less than current wallet balance"
+            return
+        }
+        
         guard isBalanceEnough(for: amount) else {
             showDialogType = .alert
             dialogMessage = "Not enough wallet balance"
             return
         }
         
-        guard isAmountLessThanBalance(amount: amount) else {
-            showDialogType = .alert
-            dialogMessage = "Amount should be less than current wallet balance"
-            return
-        }
-        
-        print("send money")
+        // TODO: refactor
         wallet.deductAmount(amount)
+        database.addTransaction(amount: amount)
+        
         showDialogType = .success
         dialogMessage = "Money Sent!"
     }
@@ -54,12 +59,12 @@ class SendMoneyViewModel: ObservableObject {
         return amount > 0
     }
     
-    private func isBalanceEnough(for amount: Int) -> Bool {
-        return amount < wallet.balance
-    }
-    
     private func isAmountLessThanBalance(amount: Int) -> Bool {
         return amount == wallet.balance
+    }
+    
+    private func isBalanceEnough(for amount: Int) -> Bool {
+        return amount < wallet.balance
     }
     
     // TODO: create protocol for currencyFormattedBalance()

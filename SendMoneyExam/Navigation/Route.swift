@@ -32,7 +32,8 @@ enum Route {
         case .sendMoney(let wallet):
             SendMoneyView(viewModel: SendMoneyViewModel(wallet: wallet))
         case .transactions:
-            TransactionListView(viewModel: TransactionViewModel())
+            // TODO: refactor passing of viewContext
+            TransactionListView(viewModel: TransactionViewModel(context: PersistenceController.shared.container.viewContext))
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }

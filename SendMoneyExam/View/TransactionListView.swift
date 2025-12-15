@@ -9,22 +9,12 @@ import SwiftUI
 
 struct TransactionListView: View {
     @StateObject var viewModel: TransactionViewModel
-    
-//    let transactions = Array(repeating: Transaction(date: .now, amount: 1000),
-//                             count: 5)
-    
-    @FetchRequest(
-        entity: Transaction.entity(),
-        sortDescriptors: [NSSortDescriptor(key: "timestamp",
-                                           ascending: false)]
-    )
-    private var transactions: FetchedResults<Transaction>
-    
+
     var body: some View {
-        List(transactions) {
+        List(viewModel.transactions) {
             TransactionItemView(transaction: $0)
         }
-        .emptyPlaceholder(transactions, placeholder:
+        .emptyPlaceholder(viewModel.transactions, placeholder:
             VStack {
                 Image(systemName: "info.circle.fill")
                     .foregroundColor(.blue)
@@ -50,6 +40,6 @@ extension View {
 
 struct TransactionListView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionListView(viewModel: TransactionViewModel())
+        TransactionListView(viewModel: TransactionViewModel(context: PersistenceController.shared.container.viewContext))
     }
 }
