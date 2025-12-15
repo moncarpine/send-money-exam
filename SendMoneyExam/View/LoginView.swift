@@ -66,9 +66,3 @@ struct LoginView: View {
         .padding(.horizontal, 32)
     }
 }
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView(path: .constant(.init()))
-    }
-}

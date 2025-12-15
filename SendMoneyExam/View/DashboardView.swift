@@ -74,9 +74,3 @@ private struct DashboardLabelStyle: LabelStyle {
         .padding()
     }
 }
-
-struct DashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardView(path: .constant(.init()), viewModel: .init(wallet: .init(balance: 1000)))
-    }
-}

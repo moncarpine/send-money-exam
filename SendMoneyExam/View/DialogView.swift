@@ -53,9 +53,3 @@ struct DialogView: View {
         .padding(24)
     }
 }
-
-struct SendMoneyDialogView_Previews: PreviewProvider {
-    static var previews: some View {
-        DialogView(message: "Money Sent!")
-    }
-}

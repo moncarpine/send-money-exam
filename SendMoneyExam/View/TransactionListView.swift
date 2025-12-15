@@ -31,9 +31,3 @@ private struct EmptyTransactionView: View {
         }
     }
 }
-
-struct TransactionListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionListView(viewModel: TransactionViewModel(context: PersistenceController.shared.container.viewContext))
-    }
-}

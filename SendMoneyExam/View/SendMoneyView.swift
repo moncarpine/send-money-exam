@@ -54,10 +54,3 @@ struct SendMoneyView: View {
         isAmountFocused = true
     }
 }
-
-struct SendMoneyView_Previews: PreviewProvider {
-    static var previews: some View {
-        SendMoneyView(viewModel: .init(wallet: .init(balance: 1000),
-                                       context: PersistenceController.shared.container.viewContext))
-    }
-}

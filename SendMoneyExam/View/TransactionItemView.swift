@@ -30,9 +30,3 @@ struct TransactionItemView: View {
         .navigationTitle("Transactions")
     }
 }
-
-struct TransactionItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionItemView(transaction: .init())
-    }
-}
