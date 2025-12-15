@@ -19,13 +19,3 @@ class Wallet: Identifiable, ObservableObject {
         balance -= deduction
     }
 }
-
-extension Wallet: Hashable {
-    static func == (lhs: Wallet, rhs: Wallet) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}

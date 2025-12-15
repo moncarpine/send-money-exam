@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct SendMoneyExamApp: App {
-    let persistenceController = PersistenceController.shared
+    let context = PersistenceController.shared.container.viewContext
 
     @State private var path = NavigationPath()
     
@@ -18,10 +18,10 @@ struct SendMoneyExamApp: App {
             NavigationStack(path: $path) {
                 LoginView(path: $path)
                     .navigationDestination(for: Route.self) { route in
-                        route.view($path)
+                        route.view($path, context: context)
                             .navigationBarBackButtonHidden(route.hideBackButton)
                     }
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, context)
             }
         }
     }

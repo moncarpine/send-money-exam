@@ -5,11 +5,11 @@
 //  Created by Monty Carlo Pineda on 12/15/25.
 //
 
-import Foundation
+import CoreData
 
-// TODO: refactor implementation of TransactionDatabase in this viewmodel
+// TODO: refactor implementation of TransactionDataManager in this viewmodel
 class SendMoneyViewModel: ObservableObject {
-    private let database: TransactionDatabase
+    private let dataManager: TransactionDataManager
     
     @Published var wallet: Wallet
     
@@ -19,11 +19,12 @@ class SendMoneyViewModel: ObservableObject {
     
     private let formatter = AmountFormatter()
     
-    init(wallet: Wallet) {
+    init(wallet: Wallet, context: NSManagedObjectContext) {
         self.wallet = wallet
-        self.database = TransactionDatabase(context: PersistenceController.shared.container.viewContext)
+        self.dataManager = TransactionDataManager(context: context)
     }
     
+    @MainActor
     func sendMoney(amount: Int) {
         defer {
             showDialog = (showDialogType != nil)
@@ -49,10 +50,18 @@ class SendMoneyViewModel: ObservableObject {
         
         // TODO: refactor
         wallet.deductAmount(amount)
-        database.addTransaction(amount: amount)
-        
-        showDialogType = .success
-        dialogMessage = "Money Sent!"
+        saveTransaction(amount: amount)
+    }
+    
+    private func saveTransaction(amount: Int) {
+        do {
+            try dataManager.addTransaction(amount: amount)
+            showDialogType = .success
+            dialogMessage = "Money Sent!"
+        } catch {
+            showDialogType = .error
+            dialogMessage = "Failed to send money"
+        }
     }
     
     private func isAmountValid(_ amount: Int) -> Bool {

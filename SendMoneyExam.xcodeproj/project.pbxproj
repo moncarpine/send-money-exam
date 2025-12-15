@@ -32,6 +32,7 @@
 		97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE42EEAF3140056BB1F /* DashboardView.swift */; };
 		97F65C382EF008BA00AF149F /* TransactionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F65C372EF008BA00AF149F /* TransactionItemView.swift */; };
 		97F65C3B2EF03BD300AF149F /* View+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */; };
+		97F65C422EF043E900AF149F /* TransactionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F65C412EF043E900AF149F /* TransactionDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		97EB3DE42EEAF3140056BB1F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		97F65C372EF008BA00AF149F /* TransactionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemView.swift; sourceTree = "<group>"; };
 		97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Placeholder.swift"; sourceTree = "<group>"; };
+		97F65C412EF043E900AF149F /* TransactionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		97EB3DDF2EEAD4380056BB1F /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				97F65C402EF043D300AF149F /* DataManager */,
 				97C9F2E32EE9B2DA0037B1F4 /* Persistence.swift */,
 				97C9F2E52EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld */,
 			);
@@ -245,6 +248,14 @@
 				97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		97F65C402EF043D300AF149F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				97F65C412EF043E900AF149F /* TransactionDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +403,7 @@
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
 				97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */,
 				97A632652EED900C004A3D76 /* SendMoneyView.swift in Sources */,
+				97F65C422EF043E900AF149F /* TransactionDataManager.swift in Sources */,
 				97A632632EED852D004A3D76 /* WalletViewModel.swift in Sources */,
 				97F65C382EF008BA00AF149F /* TransactionItemView.swift in Sources */,
 				97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */,
