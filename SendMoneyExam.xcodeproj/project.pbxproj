@@ -31,6 +31,7 @@
 		97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */; };
 		97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE42EEAF3140056BB1F /* DashboardView.swift */; };
 		97F65C382EF008BA00AF149F /* TransactionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F65C372EF008BA00AF149F /* TransactionItemView.swift */; };
+		97F65C3B2EF03BD300AF149F /* View+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		97EB3DE22EEAD4FD0056BB1F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		97EB3DE42EEAF3140056BB1F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		97F65C372EF008BA00AF149F /* TransactionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemView.swift; sourceTree = "<group>"; };
+		97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Placeholder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		97C9F2D92EE9B2D60037B1F4 /* SendMoneyExam */ = {
 			isa = PBXGroup;
 			children = (
+				97F65C392EF03BB400AF149F /* Extension */,
 				97733DE72EEEC25600611BD1 /* Helper */,
 				97590BDD2EEDC1DC00FED302 /* Navigation */,
 				97EB3DDF2EEAD4380056BB1F /* Persistence */,
@@ -234,6 +237,14 @@
 				97C9F2E52EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		97F65C392EF03BB400AF149F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				97F65C3A2EF03BD300AF149F /* View+Placeholder.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,6 +387,7 @@
 				97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */,
 				974900C72EEF544B0056B6D4 /* SendMoneyViewModel.swift in Sources */,
 				97733DF02EEEC80300611BD1 /* TransactionViewModel.swift in Sources */,
+				97F65C3B2EF03BD300AF149F /* View+Placeholder.swift in Sources */,
 				97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */,
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
 				97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */,

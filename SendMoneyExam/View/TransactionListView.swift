@@ -14,26 +14,20 @@ struct TransactionListView: View {
         List(viewModel.transactions) {
             TransactionItemView(transaction: $0)
         }
-        .emptyPlaceholder(viewModel.transactions, placeholder:
-            VStack {
-                Image(systemName: "info.circle.fill")
-                    .foregroundColor(.blue)
-                    .font(.system(size: 64))
-                Text("No Transactions")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-            }
-        )
+        .emptyPlaceholder(viewModel.transactions,
+                          placeholder: EmptyTransactionView())
     }
 }
 
-extension View {
-    @ViewBuilder
-    func emptyPlaceholder<Items: Collection, PlaceholderView: View>(_ items: Items, placeholder: PlaceholderView) -> some View {
-        if items.isEmpty {
-            placeholder
-        } else {
-            self
+private struct EmptyTransactionView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "info.circle.fill")
+                .foregroundColor(.blue)
+                .font(.system(size: 64))
+            Text("No Transactions")
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
         }
     }
 }
