@@ -11,7 +11,6 @@ struct SendMoneyView: View {
     @StateObject var viewModel: SendMoneyViewModel
     
     @State private var amountToSend: Int?
-    @State private var showAlert = false
     
     @FocusState private var isAmountFocused: Bool
     
@@ -33,7 +32,6 @@ struct SendMoneyView: View {
             Button {
                 isAmountFocused = false
                 viewModel.sendMoney(amount: amountToSend ?? 0)
-                showAlert.toggle()
             } label: {
                 Text("Send")
                     .frame(maxWidth: .infinity)
@@ -44,14 +42,15 @@ struct SendMoneyView: View {
             .padding(.top, 8)
         }
         .padding(40)
-        .sheet(isPresented: $showAlert, onDismiss: clearFields) {
-            DialogView(message: "Money Sent!")
-                .presentationDetents([.fraction(0.3)])
+        .sheet(isPresented: $viewModel.showDialog, onDismiss: clearFields) {
+            DialogView(message: viewModel.dialogMessage,
+                       dialogType: viewModel.showDialogType ?? .info)
+                .presentationDetents([.medium])
         }
     }
     
     private func clearFields() {
-        amountToSend = nil
+        amountToSend = nil // TODO: clear only if money sent successfully.
         isAmountFocused = true
     }
 }

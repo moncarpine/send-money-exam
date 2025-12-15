@@ -11,12 +11,14 @@ struct DialogView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State var message: String
-    @State var modalType: DialogType = .success
+    @State var dialogType: DialogType = .success
     
     var body: some View {
         VStack {
+            Spacer()
+            
             Group {
-                switch modalType {
+                switch dialogType {
                 case .success:
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundColor(.green)
@@ -35,6 +37,7 @@ struct DialogView: View {
             
             Text(message)
                 .font(.largeTitle)
+                .multilineTextAlignment(.center)
             
             Spacer()
             
