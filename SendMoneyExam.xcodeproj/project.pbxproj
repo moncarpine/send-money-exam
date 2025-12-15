@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971CF6012EF080D00060CCF8 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971CF6002EF080D00060CCF8 /* LoginTests.swift */; };
 		974900C52EEF541C0056B6D4 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974900C42EEF541C0056B6D4 /* Wallet.swift */; };
 		974900C72EEF544B0056B6D4 /* SendMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974900C62EEF544B0056B6D4 /* SendMoneyViewModel.swift */; };
 		97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BDE2EEDC1EA00FED302 /* Route.swift */; };
@@ -24,7 +25,6 @@
 		97C9F2E22EE9B2DA0037B1F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C9F2E12EE9B2DA0037B1F4 /* Preview Assets.xcassets */; };
 		97C9F2E42EE9B2DA0037B1F4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2E32EE9B2DA0037B1F4 /* Persistence.swift */; };
 		97C9F2E72EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2E52EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld */; };
-		97C9F2F12EE9B2DA0037B1F4 /* SendMoneyExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2F02EE9B2DA0037B1F4 /* SendMoneyExamTests.swift */; };
 		97C9F2FB2EE9B2DA0037B1F4 /* SendMoneyExamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2FA2EE9B2DA0037B1F4 /* SendMoneyExamUITests.swift */; };
 		97C9F2FD2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9F2FC2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift */; };
 		97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EB3DE02EEAD4F00056BB1F /* LoginView.swift */; };
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		971CF6002EF080D00060CCF8 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		974900C42EEF541C0056B6D4 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		974900C62EEF544B0056B6D4 /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
 		97590BDE2EEDC1EA00FED302 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		97C9F2E32EE9B2DA0037B1F4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		97C9F2E62EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SendMoneyExam.xcdatamodel; sourceTree = "<group>"; };
 		97C9F2EC2EE9B2DA0037B1F4 /* SendMoneyExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMoneyExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97C9F2F02EE9B2DA0037B1F4 /* SendMoneyExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamTests.swift; sourceTree = "<group>"; };
 		97C9F2F62EE9B2DA0037B1F4 /* SendMoneyExamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMoneyExamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C9F2FA2EE9B2DA0037B1F4 /* SendMoneyExamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamUITests.swift; sourceTree = "<group>"; };
 		97C9F2FC2EE9B2DA0037B1F4 /* SendMoneyExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		97C9F2EF2EE9B2DA0037B1F4 /* SendMoneyExamTests */ = {
 			isa = PBXGroup;
 			children = (
-				97C9F2F02EE9B2DA0037B1F4 /* SendMoneyExamTests.swift */,
+				971CF6002EF080D00060CCF8 /* LoginTests.swift */,
 			);
 			path = SendMoneyExamTests;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97C9F2F12EE9B2DA0037B1F4 /* SendMoneyExamTests.swift in Sources */,
+				971CF6012EF080D00060CCF8 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
