@@ -8,7 +8,8 @@ The latest `Xcode` and `Swift` versions I can use on this machine is `Xcode 14.2
 If there are any deprecated API warnings/errors when you open this project on the latest `Xcode`, it is because of my outdated `Xcode` and `Swift` versions.
 
 ## Usage
-- Username: 123
+- ~Username: 123~
+- Username: Bret
 - Password: 123
 
 ## Development Environment
@@ -18,3 +19,6 @@ If there are any deprecated API warnings/errors when you open this project on th
 
 ## Dependencies
 - No third party dependencies used.
+
+## TO-DOs
+- Implement unit test on relevant modules.
