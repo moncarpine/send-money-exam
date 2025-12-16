@@ -10,6 +10,12 @@
 		971CF6012EF080D00060CCF8 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971CF6002EF080D00060CCF8 /* LoginTests.swift */; };
 		974900C52EEF541C0056B6D4 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974900C42EEF541C0056B6D4 /* Wallet.swift */; };
 		974900C72EEF544B0056B6D4 /* SendMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974900C62EEF544B0056B6D4 /* SendMoneyViewModel.swift */; };
+		97548D7D2EF145100030BC60 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D7C2EF145100030BC60 /* APIManager.swift */; };
+		97548D7F2EF145410030BC60 /* APIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D7E2EF145410030BC60 /* APIComponent.swift */; };
+		97548D812EF145530030BC60 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D802EF145530030BC60 /* APIConfiguration.swift */; };
+		97548D842EF1531D0030BC60 /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D832EF1531D0030BC60 /* AuthenticationRequest.swift */; };
+		97548D872EF153F60030BC60 /* BaseAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D862EF153F60030BC60 /* BaseAPIConfiguration.swift */; };
+		97548D892EF159300030BC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97548D882EF159300030BC60 /* User.swift */; };
 		97590BDF2EEDC1EA00FED302 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BDE2EEDC1EA00FED302 /* Route.swift */; };
 		97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97590BE02EEDD19800FED302 /* TransactionListView.swift */; };
 		976FBE9F2EEEE940007218D4 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976FBE9E2EEEE940007218D4 /* DialogView.swift */; };
@@ -56,6 +62,12 @@
 		971CF6002EF080D00060CCF8 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		974900C42EEF541C0056B6D4 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		974900C62EEF544B0056B6D4 /* SendMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewModel.swift; sourceTree = "<group>"; };
+		97548D7C2EF145100030BC60 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		97548D7E2EF145410030BC60 /* APIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIComponent.swift; sourceTree = "<group>"; };
+		97548D802EF145530030BC60 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		97548D832EF1531D0030BC60 /* AuthenticationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
+		97548D862EF153F60030BC60 /* BaseAPIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIConfiguration.swift; sourceTree = "<group>"; };
+		97548D882EF159300030BC60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		97590BDE2EEDC1EA00FED302 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		97590BE02EEDD19800FED302 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		976FBE9E2EEEE940007218D4 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
@@ -114,8 +126,38 @@
 			isa = PBXGroup;
 			children = (
 				974900C42EEF541C0056B6D4 /* Wallet.swift */,
+				97548D882EF159300030BC60 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		97548D792EF143B50030BC60 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				97548D7E2EF145410030BC60 /* APIComponent.swift */,
+				97548D802EF145530030BC60 /* APIConfiguration.swift */,
+				97548D7C2EF145100030BC60 /* APIManager.swift */,
+				97548D852EF153D70030BC60 /* Configuration */,
+				978D66E52EEC16AB004CC45B /* Service */,
+				97548D822EF152FB0030BC60 /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		97548D822EF152FB0030BC60 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				97548D832EF1531D0030BC60 /* AuthenticationRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		97548D852EF153D70030BC60 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				97548D862EF153F60030BC60 /* BaseAPIConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		97590BDD2EEDC1DC00FED302 /* Navigation */ = {
@@ -167,11 +209,11 @@
 		97C9F2D92EE9B2D60037B1F4 /* SendMoneyExam */ = {
 			isa = PBXGroup;
 			children = (
+				97548D792EF143B50030BC60 /* Network */,
 				97F65C392EF03BB400AF149F /* Extension */,
 				97733DE72EEEC25600611BD1 /* Helper */,
 				97590BDD2EEDC1DC00FED302 /* Navigation */,
 				97EB3DDF2EEAD4380056BB1F /* Persistence */,
-				978D66E52EEC16AB004CC45B /* Service */,
 				974900C32EEF54060056B6D4 /* Model */,
 				97C9F30B2EE9B58C0037B1F4 /* ViewModel */,
 				97C9F30A2EE9B5810037B1F4 /* View */,
@@ -392,6 +434,9 @@
 				97C9F2E42EE9B2DA0037B1F4 /* Persistence.swift in Sources */,
 				97733DEE2EEEC40A00611BD1 /* Constant.swift in Sources */,
 				97EB3DE32EEAD4FD0056BB1F /* LoginViewModel.swift in Sources */,
+				97548D872EF153F60030BC60 /* BaseAPIConfiguration.swift in Sources */,
+				97548D892EF159300030BC60 /* User.swift in Sources */,
+				97548D7D2EF145100030BC60 /* APIManager.swift in Sources */,
 				9775D4CB2EEC7728009B50C6 /* DashboardViewModel.swift in Sources */,
 				974900C52EEF541C0056B6D4 /* Wallet.swift in Sources */,
 				97733DEC2EEEC2CF00611BD1 /* FormatterHelper.swift in Sources */,
@@ -400,11 +445,14 @@
 				97733DF02EEEC80300611BD1 /* TransactionViewModel.swift in Sources */,
 				97F65C3B2EF03BD300AF149F /* View+Placeholder.swift in Sources */,
 				97EB3DE52EEAF3140056BB1F /* DashboardView.swift in Sources */,
+				97548D7F2EF145410030BC60 /* APIComponent.swift in Sources */,
+				97548D842EF1531D0030BC60 /* AuthenticationRequest.swift in Sources */,
 				97C9F2DB2EE9B2D60037B1F4 /* SendMoneyExamApp.swift in Sources */,
 				97590BE12EEDD19800FED302 /* TransactionListView.swift in Sources */,
 				97A632652EED900C004A3D76 /* SendMoneyView.swift in Sources */,
 				97F65C422EF043E900AF149F /* TransactionDataManager.swift in Sources */,
 				97A632632EED852D004A3D76 /* WalletViewModel.swift in Sources */,
+				97548D812EF145530030BC60 /* APIConfiguration.swift in Sources */,
 				97F65C382EF008BA00AF149F /* TransactionItemView.swift in Sources */,
 				97EB3DE12EEAD4F00056BB1F /* LoginView.swift in Sources */,
 				97C9F2E72EE9B2DA0037B1F4 /* SendMoneyExam.xcdatamodeld in Sources */,

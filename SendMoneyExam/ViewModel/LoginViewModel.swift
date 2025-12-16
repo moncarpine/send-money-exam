@@ -34,7 +34,13 @@ class LoginViewModel: ObservableObject {
         }
         
         isLoading = true
-        isAuthenticated = await service.login(username: username, password: password)
+        
+        do {
+            isAuthenticated = try await service.login(username: username, password: password)
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        
         isLoading = false
         
         if isAuthenticated {
