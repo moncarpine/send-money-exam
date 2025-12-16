@@ -12,6 +12,7 @@ protocol AuthenticationServiceProtocol {
 }
 
 class AuthenticationService: AuthenticationServiceProtocol {
+    /// username = "Bret", password = "123"
     func login(username: String, password: String) async throws -> Bool {
         do {
             let data = try await APIManager.shared.request(for: .login)
